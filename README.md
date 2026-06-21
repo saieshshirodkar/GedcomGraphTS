@@ -2,7 +2,7 @@
 
 TypeScript port of Michael's original Java GedcomGraph engine. Parses GEDCOM 5.5.1 files and lays out family trees as graphs — no genealogy app, just the layout algorithm and a renderer.
 
-<img src="assets/sample.png" width="400"><img src="assets/sample-left.png" width="400" style="margin-left:12px">
+<img src="assets/sample.png" width="400"> <img src="assets/sample-left.png" width="400">
 
 ## Usage
 
@@ -19,15 +19,15 @@ bun run render -- demo.ged tree.png [scale] [personId]
 **Web app:**
 
 ```bash
-bun dev       # localhost:5173
-bun run build # dist/
+bun dev
+bun run build
 ```
 
 **Tests:**
 
 ```bash
-bun test              # 198 tests
-bun run typecheck     # tsc --noEmit
+bun test
+bun run typecheck
 ```
 
 ## Library
