@@ -4,6 +4,8 @@
 
 **COMPLETE** — 1:1 port from `GedcomGraph/src/main/java/graph/gedcom/` (Java) → `src/graph/gedcom/` (TypeScript). 198/198 tests passing, typecheck clean, PNG renderer working.
 
+**Public repo:** Personal GEDCOM data (`web/shirodkar.ged`) is gitignored — use `demo.ged` for public demos. Swap imports locally for dev.
+
 ## Ported Files (22 of 22 — COMPLETE)
 
 Flat module subdirectories under `src/graph/gedcom/` (no barrel exports):
@@ -57,15 +59,15 @@ npm run render -- <input.ged> <output.png> [scale] [personId]
 
 ## Web App
 
-Browser-based tree viewer using Vite + vanilla TypeScript + Panzoom. Hardcodes the Shankar Shirodkar family tree GEDCOM file.
+Browser-based tree viewer using Vite + vanilla TypeScript + Panzoom. Defaults to `demo.ged` (synthetic 15-person tree). Swap the import in `web/main.ts` to load a personal GEDCOM for local dev.
 
 | File                 | Purpose                                                                     |
 | -------------------- | --------------------------------------------------------------------------- |
 | `web/index.html`     | Dark-themed page with canvas element                                        |
 | `web/main.ts`        | Entry — parses GEDCOM, runs graph pipeline, renders to canvas, Panzoom init |
+| `web/demo.ged`       | Synthetic 15-person family tree (3 gen, multi-marriage)                     |
 | `web/style.css`      | Full-viewport dark container (`overflow: hidden`, Panzoom handles panning)  |
 | `web/vite.config.ts` | Root: `web/`, outDir: `../dist`                                             |
-| `web/shirodkar.ged`  | Hardcoded Shankar Shirodkar GEDCOM file                                     |
 | `web/vite-env.d.ts`  | Vite client types + `?raw` module declaration                               |
 | `web/tsconfig.json`  | Web-specific TS config (extends root, adds vite/client types)               |
 
@@ -75,13 +77,11 @@ bun run build # Production build → dist/
 bun run deploy # Deploy to Vercel (requires Vercel CLI)
 ```
 
-**Live:** https://shankarfamilytree.vercel.app
-
 **Package manager:** Bun 1.3. Lockfile: `bun.lock` (no `package-lock.json`).
 
 **Features:**
 
-- Fulcrum: Rowlu Shet (`I113`). Scale: 2.
+- Fulcrum: Henry Smith (`I14`). Scale: 2.
 - **HiDPI rendering** — canvas pixel buffer = logical × `devicePixelRatio` (capped at 2). Crisp on Retina displays.
 - **Panzoom** (`@panzoom/panzoom`) — mouse wheel zoom, click-drag pan, double-click zoom in.
 - **Zoom-to-fit** — tree initially scaled to fill the viewport. `maxScale = dpr` ensures 1:1 pixel mapping at max zoom (never blurry).
