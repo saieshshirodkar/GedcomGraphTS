@@ -1,6 +1,6 @@
 # GedcomGraph
 
-GEDCOM family tree graph layout engine. TypeScript port of [michelesalvador](https://github.com/michelesalvador)'s original Java code. Parses GEDCOM 5.5.1, walks ancestors/descendants from any person, and produces a positioned graph. Ships with a PNG renderer and a Vite web viewer.
+Parses GEDCOM 5.5.1 files and lays out family trees as positioned graphs. Pick any person as the fulcrum — the engine walks ancestors and descendants, handles multi-marriage and pedigree collapse, and produces a clean node graph. Ships with a PNG renderer and a Vite web viewer.
 
 <img src="assets/sample.png" width="400"> <img src="assets/sample-left.png" width="400">
 
