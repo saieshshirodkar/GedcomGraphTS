@@ -67,7 +67,7 @@ GEDCOM → Parser → Graph.startFrom(fulcrum)
 
 ## Credits
 
-Original Java implementation by Michael. This is a 1:1 TypeScript port.
+Original Java implementation by [michelesalvador](https://github.com/michelesalvador). This is a 1:1 TypeScript port.
 
 ## License
 
