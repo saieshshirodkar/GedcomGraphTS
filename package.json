@@ -1,0 +1,58 @@
+{
+  "name": "gedcomgraph-ts",
+  "version": "1.0.0",
+  "description": "TypeScript port of GedcomGraph — GEDCOM family tree layout engine",
+  "keywords": [
+    "gedcom",
+    "genealogy",
+    "family-tree",
+    "graph-layout",
+    "pedigree"
+  ],
+  "author": "Michele Salvador",
+  "license": "ISC",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "test": "c8 node --import tsx --test src/**/__tests__/*.test.ts",
+    "typecheck": "npx tsc --noEmit",
+    "lint": "eslint src/ render/ web/",
+    "format": "prettier --write 'src/**/*.ts' 'render/**/*.ts' 'web/**/*.ts' '*.json' '*.md'",
+    "format:check": "prettier --check 'src/**/*.ts' 'render/**/*.ts' 'web/**/*.ts' '*.json' '*.md'",
+    "render": "npx tsx render/RenderTree.ts",
+    "dev": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "deploy": "vercel deploy --prod",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "c8": "^11.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^17.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@panzoom/panzoom": "^4.6.2",
+    "canvas": "^3.2.3"
+  }
+}

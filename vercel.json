@@ -1,0 +1,6 @@
+{
+  "name": "shankarfamilytree",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
+}
