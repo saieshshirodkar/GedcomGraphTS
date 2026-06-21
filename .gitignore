@@ -6,4 +6,10 @@ coverage/
 .env
 *.png
 !.gitkeep
+!assets/*.png
 .vercel
+
+# Personal family tree data — not for public repo
+web/shirodkar.ged
+render/shirodkar.ged
+harry_potter.ged

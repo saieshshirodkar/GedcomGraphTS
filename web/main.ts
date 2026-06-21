@@ -7,7 +7,7 @@ import { measureNode } from '../render/measure'
 import { drawLines, drawBonds, drawDuplicateLines, drawPersonNodes } from '../render/draw'
 import { mapParsedGedcom, buildGedcom } from '../render/gedcom-mock'
 import Panzoom from '@panzoom/panzoom'
-import gedcomText from './shirodkar.ged?raw'
+import gedcomText from './demo.ged?raw'
 
 function main(): void {
   initScale(2)
@@ -16,7 +16,7 @@ function main(): void {
   const { people, families } = mapParsedGedcom(parsed)
   const gedcom = buildGedcom(people, families)
 
-  const fulcrumId = 'I113'
+  const fulcrumId = 'I14'
   const fulcrum = gedcom.getPerson(fulcrumId)
   if (!fulcrum) {
     console.error('Person ' + fulcrumId + ' not found')
